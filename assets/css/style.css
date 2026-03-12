@@ -1,0 +1,108 @@
+:root {
+    --nebula-primary: #6366f1;
+    --nebula-secondary: #4f46e5;
+    --nebula-text: #1f2937;
+    --nebula-text-light: #6b7280;
+    --nebula-bg: #ffffff;
+    --nebula-border: #e5e7eb;
+    --nebula-radius: 12px;
+    --nebula-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.nebula-faq-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.nebula-faq-item {
+    background: var(--nebula-bg);
+    border: 1px solid var(--nebula-border);
+    border-radius: var(--nebula-radius);
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--nebula-shadow);
+}
+
+.nebula-faq-item:hover {
+    border-color: var(--nebula-primary);
+}
+
+.nebula-faq-item.active {
+    border-color: var(--nebula-primary);
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.1), 0 4px 6px -4px rgba(99, 102, 241, 0.1);
+}
+
+.nebula-faq-question {
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    background: transparent;
+}
+
+.nebula-faq-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--nebula-text);
+    transition: color 0.3s ease;
+}
+
+.nebula-faq-item.active .nebula-faq-title {
+    color: var(--nebula-primary);
+}
+
+.nebula-faq-icon {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.nebula-faq-icon::before,
+.nebula-faq-icon::after {
+    content: '';
+    position: absolute;
+    background: var(--nebula-text-light);
+    transition: all 0.3s ease;
+}
+
+/* Vertical line */
+.nebula-faq-icon::before {
+    width: 2px;
+    height: 12px;
+    left: 11px;
+    top: 6px;
+}
+
+/* Horizontal line */
+.nebula-faq-icon::after {
+    width: 12px;
+    height: 2px;
+    left: 6px;
+    top: 11px;
+}
+
+.nebula-faq-item.active .nebula-faq-icon {
+    transform: rotate(135deg);
+}
+
+.nebula-faq-item.active .nebula-faq-icon::before,
+.nebula-faq-item.active .nebula-faq-icon::after {
+    background: var(--nebula-primary);
+}
+
+.nebula-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nebula-faq-answer-content {
+    padding: 0 1.5rem 1.25rem;
+    color: var(--nebula-text-light);
+    line-height: 1.625;
+}

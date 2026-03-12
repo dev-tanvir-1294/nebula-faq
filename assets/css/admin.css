@@ -1,0 +1,28 @@
+#nebula-faq-repeater {
+    padding: 10px 0;
+}
+
+.faq-item {
+    transition: all 0.2s ease;
+}
+
+.faq-item:hover {
+    border-color: #ccd0d4;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.faq-item input[type="text"],
+.faq-item textarea {
+    border-radius: 3px;
+    padding: 8px 10px;
+}
+
+.remove-faq-item:hover {
+    background: #fbeaea !important;
+    border-color: #dc3232 !important;
+    color: #dc3232 !important;
+}
+
+#add-faq-item {
+    margin-top: 15px;
+}
