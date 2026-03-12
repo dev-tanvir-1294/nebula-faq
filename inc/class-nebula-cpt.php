@@ -65,7 +65,8 @@ class Nebula_CPT
     public function render_shortcode_column($column, $post_id)
     {
         if ($column === 'shortcode') {
-            echo '<code>[nebula_faq id="' . $post_id . '"]</code>';
+            $post = get_post($post_id);
+            echo '<code>[nebula_faq name="' . $post->post_name . '"]</code>';
         }
     }
 }

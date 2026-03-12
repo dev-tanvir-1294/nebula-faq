@@ -12,17 +12,34 @@ class Nebula_Shortcode
     {
         $atts = shortcode_atts(
             array(
-                'id' => '',
+                'id'   => '',
+                'name' => '',
             ),
             $atts,
             'nebula_faq'
         );
 
-        if (empty($atts['id'])) {
+        $faq_id = $atts['id'];
+
+        // If name is provided, find the ID by slug
+        if (!empty($atts['name'])) {
+            $posts = get_posts(array(
+                'name'           => $atts['name'],
+                'post_type'      => 'nebula_faq',
+                'post_status'    => 'publish',
+                'posts_per_page' => 1
+            ));
+
+            if ($posts) {
+                $faq_id = $posts[0]->ID;
+            }
+        }
+
+        if (empty($faq_id)) {
             return '';
         }
 
-        $faq_items = get_post_meta($atts['id'], '_nebula_faq_items', true);
+        $faq_items = get_post_meta($faq_id, '_nebula_faq_items', true);
 
         if (empty($faq_items) || !is_array($faq_items)) {
             return '';
