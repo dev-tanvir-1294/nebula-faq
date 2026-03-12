@@ -53,7 +53,7 @@ class Nebula_FAQ
 
         // Meta Box hooks
         add_action('add_meta_boxes', array($this->meta_box, 'add_faq_meta_box'));
-        add_action('save_post_nebula_faq', array($this->meta_box, 'save_faq_data'));
+        add_action('save_post', array($this->meta_box, 'save_faq_data'), 10, 2);
 
         // Shortcode hooks
         add_shortcode('nebula_faq', array($this->shortcode, 'render_faq'));

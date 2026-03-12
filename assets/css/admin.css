@@ -26,3 +26,21 @@
 #add-faq-item {
     margin-top: 15px;
 }
+
+.faq-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    border-radius: 4px;
+}
+
+.faq-item strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.faq-item input[type="text"],
+.faq-item textarea {
+    width: 100%;
+}

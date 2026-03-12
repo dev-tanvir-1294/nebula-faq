@@ -49,14 +49,8 @@ class Nebula_CPT
      */
     public function add_shortcode_column($columns)
     {
-        $new_columns = array();
-        foreach ($columns as $key => $value) {
-            $new_columns[$key] = $value;
-            if ($key === 'title') {
-                $new_columns['shortcode'] = __('Shortcode', 'nebula');
-            }
-        }
-        return $new_columns;
+        $columns['shortcode'] = __('Shortcode', 'nebula');
+        return $columns;
     }
 
     /**
