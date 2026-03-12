@@ -4,8 +4,8 @@
  * Plugin URI: https://example.com/nebula-faq
  * Description: A dynamic FAQ plugin with a custom repeater interface and premium accordion frontend.
  * Version: 1.0.0
- * Author: Antigravity
- * Author URI: https://antigravity.google
+ * Author: Md Tanvir Ahmed
+ * Author URI: https://dev-tanvir-1294.github.io/portfolio/
  * License: GPL v2 or later
  * Text Domain: nebula
  */
